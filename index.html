@@ -22,11 +22,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h1> This is a Heading</h1>
 <p>This is a paragraph.</p>
 
-<button onClick='dataLayer.push({'event': 'customEvent', 'value': 1000})'>Click to fire a custom event.</button>
+<button onClick="SendCustomEvent()">Click to fire a custom event.</button>
 
 <div style='height: 2000px; border:2px solid DodgerBlue;'>Dummy Box</div>
 <div style='height: 2000px; border:2px solid Tomato;'>Dummy Box2</div>
 
 <p>Bottom of the page</p>
+
+<script>
+  function SendCustomEvent() {
+    console.log('custom event fired')
+    window.dataLayer.push({'event': 'customEvent', 'value': 1000})
+  }
+</script>
 </body>
 </html>
